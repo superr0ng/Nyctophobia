@@ -14,6 +14,7 @@ public class Reflection : MonoBehaviour
     List<Vector3> Points;
     int defaultRayDistance = 100;
     LineRenderer lr;
+    bool intoTransfer = false;
 
     // Use this for initialization
     void Start()
@@ -37,6 +38,8 @@ public class Reflection : MonoBehaviour
         else
         {
             Points.Add(startPoint + (direction - startPoint).normalized * Infinity);
+            Debug.Log("Add");
+            Debug.Log(startPoint + (direction - startPoint).normalized * Infinity);
         }
 
         lr.positionCount = Points.Count;
@@ -61,6 +64,8 @@ public class Reflection : MonoBehaviour
         else
         {
             Points.Add(hitData.point + newDirection * defaultRayDistance);
+            Debug.Log("Add*");
+            Debug.Log(hitData.point + newDirection * defaultRayDistance);
         }
     }
 }
