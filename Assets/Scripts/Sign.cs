@@ -5,6 +5,7 @@ using UnityEngine;
 public class Sign : MonoBehaviour
 {
     public GameObject[] plates;
+    public bool[] isLit = new bool[15];
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +28,13 @@ public class Sign : MonoBehaviour
         }
         toggle(r, c);
     }
+    void printisLit(){
+        Debug.Log("===================");
+        for(int i = 0; i < plates.Length; i++){
+            if(isLit[i])
+                Debug.Log(i.ToString());
+        }
+    }
     public void toggle(int r, int c){
         int[] r_dir = {0, 0, 1, 0, -1}; //c, r, u, l, d
         int[] c_dir = {0, 1, 0, -1, 0}; //c, r, u, l, d
@@ -34,8 +42,25 @@ public class Sign : MonoBehaviour
             int rr =  r + r_dir[i];
             int cc = c + c_dir[i];
             if(rr >= 0 && rr < 5 && cc >= 0 && cc < 3){
+                isLit[3 * rr + cc] = !isLit[3 * rr + cc];
                 plates[3 * rr + cc].GetComponent<SpriteRenderer>().color = (plates[3 * rr + cc].GetComponent<SpriteRenderer>().color == Color.white)? Color.yellow : Color.white;
             }
         }
+        gameObject.GetComponentInParent<Signs>().CompareCharacters();
+        // printisLit();
+    }
+    public void SignInit(List<int> character){
+        foreach(int pi in character){
+            // Debug.Log(plate);
+            plates[pi].GetComponent<SpriteRenderer>().color = Color.yellow;
+            isLit[pi] = true;
+        }
+    }
+    public bool Compare(List<int> character){
+        foreach(int pi in character){
+            if(!isLit[pi])
+                return false;
+        }
+        return true;
     }
 }
