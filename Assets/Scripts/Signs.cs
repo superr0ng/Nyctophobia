@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
+using UnityEngine.SceneManagement;
 
 public class Signs : MonoBehaviour
 {
@@ -12,7 +14,7 @@ public class Signs : MonoBehaviour
         charactersInit();
         toTogglesInit();
         SignInit();
-        messSign();
+        MessSign();
     }
     void charactersInit(){
         characters.Add(new List<int> {0, 1, 2, 3, 6, 9, 12}); // L
@@ -23,11 +25,7 @@ public class Signs : MonoBehaviour
     }
     void SignInit(){
         for(int i = 0; i < signs.Length; i++){
-            var srs = signs[i].GetComponentsInChildren<SpriteRenderer>();
-            foreach(int plate in characters[i]){
-                // Debug.Log(plate);
-                srs[plate].color = Color.red;
-            }
+            signs[i].GetComponent<Sign>().SignInit(characters[i]);
         }
     }
     void toTogglesInit(){
@@ -37,7 +35,7 @@ public class Signs : MonoBehaviour
         toToggles.Add(new List<int> {0, 2, 5, 14}); // H
         toToggles.Add(new List<int> {2, 6, 9, 11, 12}); // T
     }
-    void messSign(){
+    void MessSign(){
         for(int i = 0; i < signs.Length; i++){
             foreach(int toToggle in toToggles[i])
             {
@@ -48,9 +46,23 @@ public class Signs : MonoBehaviour
             }
         }
     }
+    public void CompareCharacters(){
+        for(int i = 0; i < signs.Length; i++){
+            if(!signs[i].GetComponent<Sign>().Compare(characters[i]))
+                return;
+        }
+        DOVirtual.DelayedCall(3, GotoNextScene);
+    }
     // Update is called once per frame
     void Update()
     {
-        
+        // if(CompareCharacters()){
+        //     DOVirtual.DelayedCall(3, GotoNextScene);
+        //     // SceneManager.LoadScene("Scene3");
+        // }
+    }
+    void GotoNextScene(){
+        SceneManager.LoadScene("Scene3");
+        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
     }
 }
