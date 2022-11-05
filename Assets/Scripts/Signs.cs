@@ -26,7 +26,7 @@ public class Signs : MonoBehaviour
             var srs = signs[i].GetComponentsInChildren<SpriteRenderer>();
             foreach(int plate in characters[i]){
                 // Debug.Log(plate);
-                srs[plate].color = Color.yellow;
+                srs[plate].color = Color.red;
             }
         }
     }

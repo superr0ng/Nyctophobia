@@ -34,7 +34,11 @@ public class Sign : MonoBehaviour
             int rr =  r + r_dir[i];
             int cc = c + c_dir[i];
             if(rr >= 0 && rr < 5 && cc >= 0 && cc < 3){
-                plates[3 * rr + cc].GetComponent<SpriteRenderer>().color = (plates[3 * rr + cc].GetComponent<SpriteRenderer>().color == Color.white)? Color.yellow : Color.white;
+                var plateColor = plates[3 * rr + cc].GetComponent<SpriteRenderer>().color;
+                if(plateColor == Color.white || plateColor == Color.yellow)
+                    plates[3 * rr + cc].GetComponent<SpriteRenderer>().color = (plateColor == Color.white)? Color.yellow : Color.white;
+                else
+                    plates[3 * rr + cc].GetComponent<SpriteRenderer>().color = (plateColor == Color.red)? Color.magenta : Color.red;
             }
         }
     }
