@@ -43,13 +43,21 @@ public class Sign : MonoBehaviour
             int cc = c + c_dir[i];
             if(rr >= 0 && rr < 5 && cc >= 0 && cc < 3){
                 isLit[3 * rr + cc] = !isLit[3 * rr + cc];
-                plates[3 * rr + cc].GetComponent<SpriteRenderer>().color = (plates[3 * rr + cc].GetComponent<SpriteRenderer>().color == Color.white)? Color.yellow : Color.white;
+                var color = plates[3 * rr + cc].GetComponent<SpriteRenderer>().color;
+                if(color == Color.white || color == Color.black)
+                    plates[3 * rr + cc].GetComponent<SpriteRenderer>().color = (color == Color.white)? Color.black : Color.white;
+                else
+                    plates[3 * rr + cc].GetComponent<SpriteRenderer>().color = (color == Color.yellow)? Color.gray : Color.yellow;
             }
         }
         gameObject.GetComponentInParent<Signs>().CompareCharacters();
         // printisLit();
     }
     public void SignInit(List<int> character){
+        for(int i = 0; i < plates.Length; i++){
+            plates[i].GetComponent<SpriteRenderer>().color = Color.white;
+            // isLit[i] = true;
+        }
         foreach(int pi in character){
             // Debug.Log(plate);
             plates[pi].GetComponent<SpriteRenderer>().color = Color.yellow;
