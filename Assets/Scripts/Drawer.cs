@@ -6,7 +6,6 @@ public class Drawer : MonoBehaviour, Iclick
 {
     public GameObject drawer;
     public GameObject match;
-    public GameObject drawerController;
     public GameObject brightBackground;
     public GameObject darkBackground;
     // Start is called before the first frame update
@@ -18,18 +17,6 @@ public class Drawer : MonoBehaviour, Iclick
         brightBackground.SetActive(true);
         darkBackground.SetActive(false);
         Invoke("ChangeBackground", 3);
-        // drawerController.SetActive(false);
-        // MonoBehaviour camMono = Camera.main.GetComponent<MonoBehaviour>();
-        // camMono.StartCoroutine(ChangeBackground());
-        /*
-        StartCoroutine(ChangeBackground());
-        IEnumerator ChangeBackground()
-        {
-            yield return new WaitForSeconds(3);
-            brightBackground.SetActive(false);
-            darkBackground.SetActive(true);
-        }
-        */
     }
 
     // Update is called once per frame

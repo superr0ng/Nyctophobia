@@ -6,31 +6,38 @@ using UnityEngine.SceneManagement;
 
 public class Match : MonoBehaviour, Iclick
 {
-    public Animator animator;
+    public Animator candle;
+    // public Animator candle1;
+    // public Animator candle2;
     public Animator player1;
+    public GameObject candleObj;
+    public GameObject candle1Obj;
+    public GameObject candle2Obj;
     public void onClick(){
-        animator.SetBool("isMatchClicked", true);
+        candle.SetBool("isMatchClicked", true);
         // drawerWithMatch.SetActive(false);
-        DOVirtual.DelayedCall(3, Player1Getcandle);
+        DOVirtual.DelayedCall(2, Player1Getcandle);
+        DOVirtual.DelayedCall(3.9f, Player1Walking);
+        DOVirtual.DelayedCall(5.7f, Player1OpeningDoor);
         DOVirtual.DelayedCall(8, GotoNextScene);
-        // DOVirtual.DelayedCall(4, Player1Walking);
-        // DOVirtual.DelayedCall(6, Player1OpeningDoor);
         Destroy(gameObject);
     }
     void Player1Getcandle(){
-        animator.SetBool("isPicked", true);
         player1.SetBool("isPick", true);
+        // candle.SetBool("isPicked", true);
     }
-    /*
     void Player1Walking(){
-        Walk.SetBool("isWalk", true);
-        animator.SetBool("isWalk", true);
+        candleObj.SetActive(false);
+        candle1Obj.SetActive(true);
+        // Walk.SetBool("isWalk", true);
+        // candle.SetBool("isWalk", true);
     }
     void Player1OpeningDoor(){
-        Walk.SetBool("isOpenDoor", true);
-        animator.SetBool("isOpenDoor", true);
+        candle1Obj.SetActive(false);
+        candle2Obj.SetActive(true);
+        // Walk.SetBool("isOpenDoor", true);
+        // candle.SetBool("isOpenDoor", true);
     }
-    */
     void GotoNextScene(){
         SceneManager.LoadScene("Scene2");
     }
