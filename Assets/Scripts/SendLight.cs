@@ -2,19 +2,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(LineRenderer))]
-public class Reflection : MonoBehaviour
+public class SendLight : MonoBehaviour
 {
     const int Infinity = 999;
 
     int maxReflections = 100;
     int currentReflections = 0;
 
-    [SerializeField]
     Vector2 startPoint, direction;
     List<Vector3> Points;
     int defaultRayDistance = 100;
     LineRenderer lr;
-    string thenGoTo = "";
+    bool passLevel = false;
 
     // Use this for initialization
     void Start()
@@ -24,25 +23,30 @@ public class Reflection : MonoBehaviour
     }
 
     private void Update()
-    {
-        var hitData = Physics2D.Raycast(startPoint, (direction - startPoint).normalized, defaultRayDistance);
+    {    
+        string thenGoTo = GameObject.Find("Main Camera").GetComponent<Reflection>().getterGoToStatus();
+        if (thenGoTo == "GoToOne" || thenGoTo == "GoToTwo"){
+            startPoint = GameObject.Find(thenGoTo).GetComponent<ChangeDir>().getterStartPoint();
+            direction = GameObject.Find(thenGoTo).GetComponent<ChangeDir>().getterSendDir();
+            
+            var hitData = Physics2D.Raycast(startPoint, direction, defaultRayDistance);
 
-        currentReflections = 0;
-        Points.Clear();
-        Points.Add(startPoint);
-        thenGoTo = "";
+            currentReflections = 0;
+            Points.Clear();
+            Points.Add(startPoint);
 
-        if (hitData)
-        {
-            ReflectFurther(startPoint, hitData);
+            if (hitData)
+            {
+                ReflectFurther(startPoint, hitData);
+            }
+            else
+            {
+                Points.Add(startPoint + direction * Infinity);
+            }
+
+            lr.positionCount = Points.Count;
+            lr.SetPositions(Points.ToArray());
         }
-        else
-        {
-            Points.Add(startPoint + (direction - startPoint).normalized * Infinity);
-        }
-
-        lr.positionCount = Points.Count;
-        lr.SetPositions(Points.ToArray());
     }
 
     public void ReflectFurther(Vector2 origin, RaycastHit2D hitData)
@@ -51,23 +55,15 @@ public class Reflection : MonoBehaviour
 
         Vector2 inDirection = (hitData.point - origin).normalized;
         Vector2 nextStartPoint, newDirection;
-        thenGoTo = "";
         if (hitData.collider.name == "TurnOne" || hitData.collider.name == "TurnTwo"){
             Points.Add(hitData.point);
             currentReflections++;
             nextStartPoint = GameObject.Find(hitData.collider.name).GetComponent<ChangeDir>().getterStartPoint();
             newDirection = GameObject.Find(hitData.collider.name).GetComponent<ChangeDir>().getterSendDir();
-        } 
-        else if (hitData.collider.name == "GoToOne") {
+        } else if ( hitData.collider.name == "LightBuld"){
             Points.Add(hitData.point);
-            currentReflections++;
-            thenGoTo = "GoToTwo";
-            return;
-        }
-        else if (hitData.collider.name == "GoToTwo") {
-            Points.Add(hitData.point);
-            currentReflections++;
-            thenGoTo = "GoToOne";
+            passLevel = true;
+            // Debug.Log("Success");
             return;
         }
         else{
@@ -89,7 +85,7 @@ public class Reflection : MonoBehaviour
         }
     }
 
-    public string getterGoToStatus(){
-        return thenGoTo;
+    public bool getterPassStatus(){
+        return passLevel;
     }
 }
