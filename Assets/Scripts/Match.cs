@@ -7,10 +7,7 @@ using UnityEngine.SceneManagement;
 public class Match : MonoBehaviour, Iclick
 {
     public Animator animator;
-    // public Animator Scared;
-    // public Animator Walk;
-    public GameObject player1Scared;
-    public GameObject player1Walk;
+    public Animator player1;
     public void onClick(){
         animator.SetBool("isMatchClicked", true);
         // drawerWithMatch.SetActive(false);
@@ -21,9 +18,8 @@ public class Match : MonoBehaviour, Iclick
         Destroy(gameObject);
     }
     void Player1Getcandle(){
-        player1Scared.SetActive(false);
-        player1Walk.SetActive(true);
         animator.SetBool("isPicked", true);
+        player1.SetBool("isPick", true);
     }
     /*
     void Player1Walking(){

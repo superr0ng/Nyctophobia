@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: lantern1Broke
+  m_Name: PlayerStumble
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,11 +20,11 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: 2bfd1279556bb453cad926b2599c5a2f, type: 3}
-    - time: 3.6666667
-      value: {fileID: 21300000, guid: 46f972067f18145f5af67e96b2efde23, type: 3}
-    - time: 240
-      value: {fileID: 21300000, guid: 46f972067f18145f5af67e96b2efde23, type: 3}
+      value: {fileID: 21300000, guid: 70c210d1f288944ed85988e600fbefb5, type: 3}
+    - time: 3.5
+      value: {fileID: 21300000, guid: 9fd81d57820be40daa15d5ea89d4d122, type: 3}
+    - time: 7
+      value: {fileID: 21300000, guid: 9fd81d57820be40daa15d5ea89d4d122, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -44,15 +44,15 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300000, guid: 2bfd1279556bb453cad926b2599c5a2f, type: 3}
-    - {fileID: 21300000, guid: 46f972067f18145f5af67e96b2efde23, type: 3}
-    - {fileID: 21300000, guid: 46f972067f18145f5af67e96b2efde23, type: 3}
+    - {fileID: 21300000, guid: 70c210d1f288944ed85988e600fbefb5, type: 3}
+    - {fileID: 21300000, guid: 9fd81d57820be40daa15d5ea89d4d122, type: 3}
+    - {fileID: 21300000, guid: 9fd81d57820be40daa15d5ea89d4d122, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 240.01666
+    m_StopTime: 7.016667
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
