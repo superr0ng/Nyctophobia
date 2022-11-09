@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
+using UnityEngine.SceneManagement;
 
 public class ChangeDir : MonoBehaviour
 {
@@ -37,9 +39,19 @@ public class ChangeDir : MonoBehaviour
         if(canRotate){
             sendDir =  RotateDir(sendDir, 60);
             transform.Rotate( 0, 0, 60.0f );
+            DOVirtual.DelayedCall(0.1f, IsPass);
         }
     }
-    
+    void IsPass(){
+        if(GameObject.Find("GoToTwo").GetComponent<SendLight>().getterPassStatus()){
+            DOVirtual.DelayedCall(3, GotoNextScene);
+        }
+    }
+    void GotoNextScene(){
+        SceneManager.LoadScene("Scene4");
+        // SceneManager.UnloadSceneAsync("Scene3");
+        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
+    }
     private Vector2 RotateDir(Vector2 v, float angle){
         var x = v.x;
         var y = v.y;

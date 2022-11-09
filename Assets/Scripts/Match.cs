@@ -40,5 +40,8 @@ public class Match : MonoBehaviour, Iclick
     }
     void GotoNextScene(){
         SceneManager.LoadScene("Scene2");
+        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
+        // SceneManager.UnloadSceneAsync("Scene1");
+
     }
 }

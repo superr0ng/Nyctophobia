@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
+using UnityEngine.SceneManagement;
 
 public class clickToRotate : MonoBehaviour
 {
@@ -14,5 +16,16 @@ public class clickToRotate : MonoBehaviour
 
     void OnMouseDown (){
         transform.Rotate( 0, 0, 30.0f );
+        DOVirtual.DelayedCall(0.1f, IsPass);
+    }
+    void IsPass(){
+        if(GameObject.Find("GoToTwo").GetComponent<SendLight>().getterPassStatus()){
+            DOVirtual.DelayedCall(3, GotoNextScene);
+        }
+    }
+    void GotoNextScene(){
+        SceneManager.LoadScene("Scene4");
+        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
+        // SceneManager.UnloadSceneAsync("Scene3");
     }
 }

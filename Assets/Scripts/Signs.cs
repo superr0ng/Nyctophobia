@@ -63,6 +63,7 @@ public class Signs : MonoBehaviour
     }
     void GotoNextScene(){
         SceneManager.LoadScene("Scene3");
+        // SceneManager.UnloadSceneAsync("Scene2");
         SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
     }
 }

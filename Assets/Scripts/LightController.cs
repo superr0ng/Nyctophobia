@@ -31,7 +31,7 @@ public class LightController : MonoBehaviour
             }
         }
     }
-    bool IsAllLit(){
+    public bool IsAllLit(){
         for(int i = 0; i < lights.Length; i++){
             if(!isLit[i]){
                 // Debug.Log(i.ToString() + "is not lit.");
@@ -51,9 +51,6 @@ public class LightController : MonoBehaviour
                 durCnt[i] = 0;
                 isLit[i] = false;
             }
-        }
-        if(IsAllLit()){
-            Debug.Log("Level Completed!!!!!!!!");
         }
     }
 }
