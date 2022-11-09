@@ -71,5 +71,9 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
+# WebGL Publisher
+/WebGL Builds/**
+connectwebgl.zip
+
 # MACOS Things...
 .DS_Store
