@@ -10,7 +10,7 @@ public class Match : MonoBehaviour, Iclick
     // public Animator candle1;
     // public Animator candle2;
     public Animator player1;
-    public GameObject candleObj;
+    // public GameObject candleObj;
     // public GameObject candle1Obj;
     // public GameObject candle2Obj;
     public void onClick(){
