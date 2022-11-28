@@ -17,7 +17,7 @@ public class LightController : MonoBehaviour
     void DurationInit(){
         for(int i = 0; i < lights.Length; i++){
             durCnt[i] = 0;
-            duration[i] = (i + 1) * 50;
+            duration[i] = (i + 1) * 100;
             isLit[i] = false;
         }
     }
@@ -47,7 +47,7 @@ public class LightController : MonoBehaviour
             }
             if(durCnt[i] >= duration[i]){
                 // Debug.Log(i.ToString() + "should be turned off.");
-                lights[i].GetComponent<SpriteRenderer>().color = Color.white;
+                lights[i].GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0f);
                 durCnt[i] = 0;
                 isLit[i] = false;
             }

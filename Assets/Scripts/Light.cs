@@ -19,14 +19,16 @@ public class Light : MonoBehaviour, Iclick
     }
     public void onClick(){
         // Debug.Log("clicked");
-        gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
+
+        gameObject.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
         GetComponentInParent<LightController>().LightByObject(gameObject);
         if(gameObject.GetComponentInParent<LightController>().IsAllLit()){
-            DOVirtual.DelayedCall(3, EndGame);
+            Debug.Log("EXIT");
+            DOVirtual.DelayedCall(2, EndGame);
         }
     }
     void EndGame(){
-        Application.Quit();
-        // SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
+        SceneManager.LoadScene("Scene0");
+        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
     }
 }
