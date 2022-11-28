@@ -5,6 +5,7 @@ using UnityEngine;
 public class Sign : MonoBehaviour
 {
     bool[] isLit = new bool[15];
+    bool isAllLit = false;
     public void toggleByPlate(GameObject plate){
         int r = 0;
         int c = 0;
@@ -25,6 +26,8 @@ public class Sign : MonoBehaviour
     //     }
     // }
     public void toggle(int r, int c){
+        if(isAllLit)
+            return;
         int[] r_dir = {0, 0, 1, 0, -1}; //c, r, u, l, d
         int[] c_dir = {0, 1, 0, -1, 0}; //c, r, u, l, d
         for(int i = 0; i < 5; i++){
@@ -36,7 +39,8 @@ public class Sign : MonoBehaviour
                 lt.intensity = (lt.intensity == 0.9f)? 0.2f : 0.9f;
             }
         }
-        if(Compare()){
+        Compare();
+        if(isAllLit){
             var lts = gameObject.transform.GetChild(1).gameObject.GetComponentsInChildren<UnityEngine.Rendering.Universal.Light2D>();
             for(int i = 0 ; i < 15; i ++)
                 lts[i].intensity = 1.2f;
@@ -48,11 +52,14 @@ public class Sign : MonoBehaviour
             isLit[i] = true;
         }
     }
-    public bool Compare(){
+    public bool IsAllLit(){
+        return isAllLit;
+    }
+    void Compare(){
         for(int i = 0; i < 15; i++){
             if(!isLit[i])
-                return false;
+                return;
         }
-        return true;
+        isAllLit = true;
     }
 }

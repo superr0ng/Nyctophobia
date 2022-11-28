@@ -40,10 +40,12 @@ public class Signs : MonoBehaviour
     public void CompareCharacters(){
         var SignScripts = GetComponentsInChildren<Sign>();
         for(int i = 0; i < 5; i++){
-            if(!SignScripts[i].Compare())
+            if(!SignScripts[i].IsAllLit())
                 return;
         }
         outer.SetActive(true);
+        outer.transform.GetChild(1).gameObject.SetActive(false);
+        outer.transform.GetChild(2).gameObject.SetActive(true);
         inner.SetActive(false);
         DOVirtual.DelayedCall(3, GotoNextScene);
     }
