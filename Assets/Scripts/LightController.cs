@@ -9,6 +9,7 @@ public class LightController : MonoBehaviour
     int[] duration = new int[MAXSIZE];
     int[] durCnt = new int[MAXSIZE];
     bool[] isLit = new bool[MAXSIZE];
+    bool isAllLit = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,17 +31,24 @@ public class LightController : MonoBehaviour
                 break;
             }
         }
+        Compare();
     }
     public bool IsAllLit(){
+        Debug.Log("In IsAllLit.");
+        return isAllLit;
+    }
+    void Compare(){
         for(int i = 0; i < lights.Length; i++){
             if(!isLit[i]){
                 // Debug.Log(i.ToString() + "is not lit.");
-                return false;
+                return;
             }
         }
-        return true;
+        isAllLit = true;
     }
     void FixedUpdate(){
+        if(isAllLit)
+            return;
         for(int i = 0; i < lights.Length; i++){
             if(isLit[i]){
                 durCnt[i]++;
@@ -52,5 +60,6 @@ public class LightController : MonoBehaviour
                 isLit[i] = false;
             }
         }
+        Compare();
     }
 }
