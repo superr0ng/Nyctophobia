@@ -8,6 +8,7 @@ public class Drawer : MonoBehaviour, Iclick
     public GameObject match;
     public GameObject brightBackground;
     public GameObject darkBackground;
+    bool canPlay = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,14 +19,12 @@ public class Drawer : MonoBehaviour, Iclick
         darkBackground.SetActive(false);
         Invoke("ChangeBackground", 3);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void AllowPlay(){
+        canPlay = true;
     }
     public void onClick(){
-        // animator.SetBool("isMatchClicked", true);
+        if(!canPlay)
+            return;
         drawer.SetActive(true);
         match.SetActive(true);
     }

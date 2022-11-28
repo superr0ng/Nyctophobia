@@ -2013,7 +2013,7 @@ SpriteRenderer:
   m_Size: {x: 19.2, y: 10.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &714791408
@@ -2921,6 +2921,7 @@ GameObject:
   - component: {fileID: 1061247800}
   - component: {fileID: 1061247799}
   - component: {fileID: 1061247801}
+  - component: {fileID: 1061247802}
   m_Layer: 0
   m_Name: Player1
   m_TagString: Untagged
@@ -3019,6 +3020,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1061247802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1061247798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 929785a62a46143a591c1d69ede10e6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drawercontroller: {fileID: 858944694}
 --- !u!1 &1108973781
 GameObject:
   m_ObjectHideFlags: 0
