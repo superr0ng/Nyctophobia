@@ -44,10 +44,10 @@ public class Signs : MonoBehaviour
                 return;
         }
         outer.SetActive(true);
-        outer.transform.GetChild(1).gameObject.SetActive(false);
-        outer.transform.GetChild(2).gameObject.SetActive(true);
+        // outer.transform.GetChild(1).gameObject.SetActive(false);
+        // outer.transform.GetChild(2).gameObject.SetActive(true);
         inner.SetActive(false);
-        DOVirtual.DelayedCall(3, GotoNextScene);
+        DOVirtual.DelayedCall(3.5f, GotoNextScene);
     }
    
     void GotoNextScene(){
