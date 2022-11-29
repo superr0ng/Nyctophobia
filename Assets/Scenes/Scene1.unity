@@ -2646,6 +2646,7 @@ MonoBehaviour:
   match: {fileID: 369181478}
   brightBackground: {fileID: 1848908188}
   darkBackground: {fileID: 684692383}
+  lights: {fileID: 1533189860}
 --- !u!61 &858944697
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3450,7 +3451,7 @@ SpriteRenderer:
   m_Size: {x: 19.2, y: 10.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &1061247802
@@ -3575,8 +3576,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1125906549}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.336, y: 0.47, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: 0.08232745, w: 0.99660534}
+  m_LocalPosition: {x: 7.336, y: 0.12, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3620,7 +3621,7 @@ MonoBehaviour:
   m_ComponentVersion: 1
   m_LightType: 3
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.5
+  m_FalloffIntensity: 0.46
   m_Color: {r: 1, g: 0.33812946, b: 0, a: 1}
   m_Intensity: 1
   m_LightVolumeIntensity: 1
@@ -3672,8 +3673,8 @@ MonoBehaviour:
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 0.25
-  m_PointLightOuterRadius: 0.98
+  m_PointLightInnerRadius: 0.6
+  m_PointLightOuterRadius: 1.99
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -4701,7 +4702,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1533189861
 Transform:
   m_ObjectHideFlags: 0
