@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(LineRenderer))]
-public class SendLight : MonoBehaviour
+public class SendLightThree : MonoBehaviour
 {
     const int Infinity = 999;
 
@@ -24,18 +24,17 @@ public class SendLight : MonoBehaviour
 
     private void Update()
     {    
-        string thenGoTo = GameObject.Find("Main Camera").GetComponent<Reflection>().getterGoToStatus();
-        if (thenGoTo == "GoToOne" || thenGoTo == "GoToTwo"){
+        string thenGoTo = "";
+        thenGoTo = GameObject.Find("GoToOne-out").GetComponent<SendLightTwo>().getterAndThenGoToStatus();
+        currentReflections = 0;
+        Points.Clear();
+        if (thenGoTo == "GoToTwo-out"){
             startPoint = GameObject.Find(thenGoTo).GetComponent<ChangeDir>().getterStartPoint();
             direction = GameObject.Find(thenGoTo).GetComponent<ChangeDir>().getterSendDir();
             
             var hitData = Physics2D.Raycast(startPoint, direction, defaultRayDistance);
-
-            currentReflections = 0;
-            Points.Clear();
             Points.Add(startPoint);
-
-            if (hitData)
+            if (hitData) // 碰到物品
             {
                 ReflectFurther(startPoint, hitData);
             }
@@ -43,10 +42,9 @@ public class SendLight : MonoBehaviour
             {
                 Points.Add(startPoint + direction * Infinity);
             }
-
-            lr.positionCount = Points.Count;
-            lr.SetPositions(Points.ToArray());
         }
+        lr.positionCount = Points.Count;
+        lr.SetPositions(Points.ToArray());
     }
 
     public void ReflectFurther(Vector2 origin, RaycastHit2D hitData)
@@ -55,27 +53,24 @@ public class SendLight : MonoBehaviour
 
         Vector2 inDirection = (hitData.point - origin).normalized;
         Vector2 nextStartPoint, newDirection;
-        if (hitData.collider.name == "TurnOne" || hitData.collider.name == "TurnTwo"){
-            Points.Add(hitData.point);
-            currentReflections++;
-            nextStartPoint = GameObject.Find(hitData.collider.name).GetComponent<ChangeDir>().getterStartPoint();
-            newDirection = GameObject.Find(hitData.collider.name).GetComponent<ChangeDir>().getterSendDir();
-        } else if ( hitData.collider.name == "LightBuld"){
+        if ( hitData.collider.name == "LightBuld"){
             Points.Add(hitData.point);
             passLevel = true;
             // Debug.Log("Success");
             return;
+        } else if (hitData.collider.name == "Up" || hitData.collider.name == "Down"){
+            Points.Add(hitData.point);
+            currentReflections++;
+            return;
         }
-        else{
-            newDirection = Vector2.Reflect(inDirection, hitData.normal);
-            nextStartPoint = hitData.point;
-        }
-
+        
+        newDirection = Vector2.Reflect(inDirection, hitData.normal);
+        nextStartPoint = hitData.point;
         Points.Add(nextStartPoint);
         currentReflections++;
 
         var newHitData = Physics2D.Raycast(nextStartPoint + (newDirection * 0.0001f), newDirection * 100, defaultRayDistance);
-        if (newHitData)
+        if (newHitData) // 碰到物品
         {
             ReflectFurther(nextStartPoint, newHitData);
         }

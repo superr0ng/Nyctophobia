@@ -10,14 +10,14 @@ public class ChangeDir : MonoBehaviour
     // Vector2 startPoint, sendDir, pointA, pointB;   
     // [SerializeField]
     public Vector2 startPoint, direction;
-    public bool canRotate;
+    public bool OneOut;
+    public bool TwoOut;
+    public bool CanRotate;
+    public int dir; // 0 = up, 1 = left, 2 = down, 3 = right
+
     Vector2 sendDir;
     void Start()
     {
-        // startPoint = new Vector2(5.1f, 13.3f);
-        // pointA = new Vector2(0.0f, 0.0f);
-        // pointB = new Vector2(1.0f, 0.0f);
-        // sendDir = (pointB - pointA).normalized;
         sendDir = (direction - startPoint).normalized;
     }
 
@@ -35,15 +35,52 @@ public class ChangeDir : MonoBehaviour
         return sendDir;
     }
 
+    public Vector3 getterRotation(){
+        return transform.eulerAngles;
+    }
+
     void OnMouseDown (){
-        if(canRotate){
-            sendDir =  RotateDir(sendDir, 60);
-            transform.Rotate( 0, 0, 60.0f );
+        if (OneOut){
+            sendDir =  RotateDir(sendDir, 90);
+            transform.Rotate( 0, 0, -90.0f );
+            if(dir == 3) dir = 0;
+            else dir += 1;
+
+            if(dir == 0) 
+                startPoint = transform.position + new Vector3(0f, 0.3f, 0);
+            else if(dir == 1)
+                startPoint = transform.position + new Vector3(0.3f, 0f, 0);
+            else if(dir == 2)
+                startPoint = transform.position - new Vector3(0f, 0.3f, 0);
+            else if(dir == 3)
+                startPoint = transform.position - new Vector3(0.3f, 0f, 0);
+
             DOVirtual.DelayedCall(0.1f, IsPass);
+        }
+        if (TwoOut){
+            sendDir =  RotateDir(sendDir, 90);
+            transform.Rotate( 0, 0, -90.0f );
+            if(dir == 3) dir = 0;
+            else dir += 1;
+
+            if(dir == 0) 
+                startPoint = transform.position + new Vector3(0.23f, 0.23f, 0);
+            else if(dir == 1)
+                startPoint = transform.position + new Vector3(0.23f, 0, 0) - new Vector3(0, 0.23f, 0);
+            else if(dir == 2)
+                startPoint = transform.position - new Vector3(0.23f, 0.23f, 0);
+            else if(dir == 3)
+                startPoint = transform.position - new Vector3(0.23f, 0, 0) + new Vector3(0, 0.23f, 0);
+
+            DOVirtual.DelayedCall(0.1f, IsPass);
+        }
+        if (CanRotate) {
+            sendDir =  RotateDir(sendDir, 45);
+            transform.Rotate( 0, 0, 45.0f );
         }
     }
     void IsPass(){
-        if(GameObject.Find("GoToTwo").GetComponent<SendLight>().getterPassStatus()){
+        if(GameObject.Find("GoToTwo-out").GetComponent<SendLightTwo>().getterPassStatus()){
             DOVirtual.DelayedCall(3, GotoNextScene);
         }
     }
