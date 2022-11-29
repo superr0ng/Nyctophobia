@@ -8,8 +8,10 @@ public class Match : MonoBehaviour, Iclick
 {
     public Animator candle;
     public Animator player1;
+    public GameObject candleLight;
     public void onClick(){
         candle.SetBool("isMatchClicked", true);
+        candleLight.SetActive(true);
         // drawerWithMatch.SetActive(false);
         DOVirtual.DelayedCall(1, Player1Getcandle);
         DOVirtual.DelayedCall(8, GotoNextScene);
