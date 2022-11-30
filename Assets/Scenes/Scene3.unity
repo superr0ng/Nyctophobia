@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 66755817}
   - component: {fileID: 66755816}
   - component: {fileID: 66755815}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GoToTwo-in
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1006,7 +1006,7 @@ GameObject:
   - component: {fileID: 747844855}
   - component: {fileID: 747844854}
   - component: {fileID: 747844853}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LightBuld
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1538,7 +1538,7 @@ GameObject:
   - component: {fileID: 1519988503}
   - component: {fileID: 1519988506}
   - component: {fileID: 1519988508}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GoToOne-in
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1630,14 +1630,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1519988501}
-  m_LocalRotation: {x: 0, y: -0, z: 0.6755903, w: -0.73727727}
+  m_LocalRotation: {x: 0, y: -0, z: 0.7071068, w: -0.7071068}
   m_LocalPosition: {x: 5.4, y: 13.2, z: 0}
   m_LocalScale: {x: 0.5713, y: 0.5713, z: 0.5713}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 275}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 270}
 --- !u!114 &1519988506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2384,7 +2384,7 @@ GameObject:
   - component: {fileID: 1902617187}
   - component: {fileID: 1902617186}
   - component: {fileID: 1902617191}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GoToTwo-out
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2627,7 +2627,7 @@ GameObject:
   - component: {fileID: 1928725251}
   - component: {fileID: 1928725253}
   - component: {fileID: 1928725252}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GoToOne-out
   m_TagString: Untagged
   m_Icon: {fileID: 0}

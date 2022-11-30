@@ -87,7 +87,7 @@ public class ChangeDir : MonoBehaviour
     void GotoNextScene(){
         SceneManager.LoadScene("Scene4");
         // SceneManager.UnloadSceneAsync("Scene3");
-        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
+        // SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
     }
     private Vector2 RotateDir(Vector2 v, float angle){
         var x = v.x;

@@ -14,6 +14,8 @@ public class SendLightThree : MonoBehaviour
     int defaultRayDistance = 100;
     LineRenderer lr;
     bool passLevel = false;
+    int mask = 1 << 6;
+    
 
     // Use this for initialization
     void Start()
@@ -32,7 +34,7 @@ public class SendLightThree : MonoBehaviour
             startPoint = GameObject.Find(thenGoTo).GetComponent<ChangeDir>().getterStartPoint();
             direction = GameObject.Find(thenGoTo).GetComponent<ChangeDir>().getterSendDir();
             
-            var hitData = Physics2D.Raycast(startPoint, direction, defaultRayDistance);
+            var hitData = Physics2D.Raycast(startPoint, direction, defaultRayDistance, mask);
             Points.Add(startPoint);
             if (hitData) // 碰到物品
             {
@@ -69,7 +71,7 @@ public class SendLightThree : MonoBehaviour
         Points.Add(nextStartPoint);
         currentReflections++;
 
-        var newHitData = Physics2D.Raycast(nextStartPoint + (newDirection * 0.0001f), newDirection * 100, defaultRayDistance);
+        var newHitData = Physics2D.Raycast(nextStartPoint + (newDirection * 0.0001f), newDirection * 100, defaultRayDistance, mask);
         if (newHitData) // 碰到物品
         {
             ReflectFurther(nextStartPoint, newHitData);
