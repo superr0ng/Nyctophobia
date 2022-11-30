@@ -12,6 +12,6 @@ public class start : MonoBehaviour, Iclick
     }
     void GotoNextScene(){
         SceneManager.LoadScene("Scene1");
-        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
+        // SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
     }
 }

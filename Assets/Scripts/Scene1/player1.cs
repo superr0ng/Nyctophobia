@@ -12,6 +12,6 @@ public class player1 : MonoBehaviour
     }
     public void GotoNextScene(){
         SceneManager.LoadScene("Scene2");
-        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
+        // SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
     }
 }

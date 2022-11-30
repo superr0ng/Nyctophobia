@@ -25,7 +25,7 @@ public class clickToRotate : MonoBehaviour
     }
     void GotoNextScene(){
         SceneManager.LoadScene("Scene4");
-        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
+        // SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
         // SceneManager.UnloadSceneAsync("Scene3");
     }
 }

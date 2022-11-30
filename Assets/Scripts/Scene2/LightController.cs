@@ -90,6 +90,6 @@ public class LightController : MonoBehaviour
     }
     void EndGame(){
         SceneManager.LoadScene("Scene0");
-        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
+        // SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
     }
 }
