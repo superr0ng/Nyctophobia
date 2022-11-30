@@ -14,6 +14,8 @@ public class ChangeDir : MonoBehaviour
     public bool TwoOut;
     public bool CanRotate;
     public int dir; // 0 = up, 1 = left, 2 = down, 3 = right
+    // bool gameStart = false;
+    bool gameEnd = false;
 
     Vector2 sendDir;
     void Start()
@@ -24,7 +26,10 @@ public class ChangeDir : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(!gameEnd && GameObject.Find("GoToTwo-out").GetComponent<SendLightThree>().getterPassStatus()){
+            gameEnd = true;
+            DOVirtual.DelayedCall(1, GotoNextScene);
+        }
     }
     
     public Vector2 getterStartPoint(){
@@ -54,8 +59,6 @@ public class ChangeDir : MonoBehaviour
                 startPoint = transform.position - new Vector3(0f, 0.3f, 0);
             else if(dir == 3)
                 startPoint = transform.position - new Vector3(0.3f, 0f, 0);
-
-            DOVirtual.DelayedCall(0.1f, IsPass);
         }
         if (TwoOut){
             sendDir =  RotateDir(sendDir, 90);
@@ -71,17 +74,10 @@ public class ChangeDir : MonoBehaviour
                 startPoint = transform.position - new Vector3(0.23f, 0.23f, 0);
             else if(dir == 3)
                 startPoint = transform.position - new Vector3(0.23f, 0, 0) + new Vector3(0, 0.23f, 0);
-
-            DOVirtual.DelayedCall(0.1f, IsPass);
         }
         if (CanRotate) {
             sendDir =  RotateDir(sendDir, 45);
             transform.Rotate( 0, 0, 45.0f );
-        }
-    }
-    void IsPass(){
-        if(GameObject.Find("GoToTwo-out").GetComponent<SendLightTwo>().getterPassStatus()){
-            DOVirtual.DelayedCall(3, GotoNextScene);
         }
     }
     void GotoNextScene(){
