@@ -47,7 +47,7 @@ public class Signs : MonoBehaviour
         // outer.transform.GetChild(1).gameObject.SetActive(false);
         // outer.transform.GetChild(2).gameObject.SetActive(true);
         inner.SetActive(false);
-        DOVirtual.DelayedCall(3.5f, GotoNextScene);
+        DOVirtual.DelayedCall(4.5f, GotoNextScene);
     }
    
     void GotoNextScene(){
