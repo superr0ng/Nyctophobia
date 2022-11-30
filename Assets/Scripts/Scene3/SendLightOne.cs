@@ -15,6 +15,7 @@ public class SendLightOne : MonoBehaviour
     int defaultRayDistance = 100;
     LineRenderer lr;
     string thenGoTo = "";
+    int mask = 1 << 6;
 
     // Use this for initialization
     void Start()
@@ -25,7 +26,8 @@ public class SendLightOne : MonoBehaviour
 
     private void Update()
     {
-        var hitData = Physics2D.Raycast(startPoint, (direction - startPoint).normalized, defaultRayDistance);
+        
+        var hitData = Physics2D.Raycast(startPoint, (direction - startPoint).normalized, defaultRayDistance, mask);
 
         currentReflections = 0;
         Points.Clear();
@@ -81,7 +83,7 @@ public class SendLightOne : MonoBehaviour
         Points.Add(nextStartPoint);
         currentReflections++;
 
-        var newHitData = Physics2D.Raycast(nextStartPoint + (newDirection * 0.0001f), newDirection * 100, defaultRayDistance);
+        var newHitData = Physics2D.Raycast(nextStartPoint + (newDirection * 0.0001f), newDirection * 100, defaultRayDistance, mask);
         if (newHitData) // 碰到物品
         {
             ReflectFurther(nextStartPoint, newHitData);
