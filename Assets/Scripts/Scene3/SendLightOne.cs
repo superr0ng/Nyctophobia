@@ -56,7 +56,7 @@ public class SendLightOne : MonoBehaviour
             var CubeDir = GameObject.Find("GoToOne-in").GetComponent<ChangeDir>().getterRotation();
             Points.Add(hitData.point);
             currentReflections++;
-            if (CubeDir.z == 320){
+            if (CubeDir.z > 310 && CubeDir.z < 330){
                 thenGoTo = "GoToOne-out";
             }
             return;
