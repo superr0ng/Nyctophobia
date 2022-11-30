@@ -8,6 +8,7 @@ public class Drawer : MonoBehaviour, Iclick
     public GameObject match;
     public GameObject brightBackground;
     public GameObject darkBackground;
+    public GameObject curtain;
     public GameObject lights;
     bool canPlay = false;
     // Start is called before the first frame update
@@ -34,5 +35,6 @@ public class Drawer : MonoBehaviour, Iclick
         brightBackground.SetActive(false);
         darkBackground.SetActive(true);
         lights.SetActive(false);
+        curtain.SetActive(false);
     }
 }
