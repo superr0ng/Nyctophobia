@@ -52,13 +52,13 @@ public class ChangeDir : MonoBehaviour, Iclick, Ihint
             else dir += 1;
 
             if(dir == 0) 
-                startPoint = transform.position + new Vector3(0f, 0.3f, 0);
+                startPoint = transform.position + new Vector3(0f, 0.5f, 0);
             else if(dir == 1)
-                startPoint = transform.position + new Vector3(0.3f, 0f, 0);
+                startPoint = transform.position + new Vector3(0.5f, 0f, 0);
             else if(dir == 2)
-                startPoint = transform.position - new Vector3(0f, 0.3f, 0);
+                startPoint = transform.position - new Vector3(0f, 0.5f, 0);
             else if(dir == 3)
-                startPoint = transform.position - new Vector3(0.3f, 0f, 0);
+                startPoint = transform.position - new Vector3(0.5f, 0f, 0);
         }
         if (TwoOut){
             sendDir =  RotateDir(sendDir, 90);
@@ -67,13 +67,13 @@ public class ChangeDir : MonoBehaviour, Iclick, Ihint
             else dir += 1;
 
             if(dir == 0) 
-                startPoint = transform.position + new Vector3(0.23f, 0.23f, 0);
+                startPoint = transform.position + new Vector3(0.35f, 0.35f, 0);
             else if(dir == 1)
-                startPoint = transform.position + new Vector3(0.23f, 0, 0) - new Vector3(0, 0.23f, 0);
+                startPoint = transform.position + new Vector3(0.35f, 0, 0) - new Vector3(0, 0.35f, 0);
             else if(dir == 2)
-                startPoint = transform.position - new Vector3(0.23f, 0.23f, 0);
+                startPoint = transform.position - new Vector3(0.35f, 0.35f, 0);
             else if(dir == 3)
-                startPoint = transform.position - new Vector3(0.23f, 0, 0) + new Vector3(0, 0.23f, 0);
+                startPoint = transform.position - new Vector3(0.35f, 0, 0) + new Vector3(0, 0.35f, 0);
         }
         if (CanRotate) {
             sendDir =  RotateDir(sendDir, 45);
