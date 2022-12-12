@@ -6,6 +6,10 @@ using UnityEngine.SceneManagement;
 public class before : MonoBehaviour
 {
     public GameObject cursor;
+    public GameObject monster;
+    public void MonsterAppears(){
+        monster.SetActive(true);
+    }
     public void AllowPlay(){
         Debug.Log("AllowPlay!");
         cursor.SetActive(true);
