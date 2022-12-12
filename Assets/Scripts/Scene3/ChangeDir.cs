@@ -4,7 +4,7 @@ using UnityEngine;
 using DG.Tweening;
 using UnityEngine.SceneManagement;
 
-public class ChangeDir : MonoBehaviour
+public class ChangeDir : MonoBehaviour, Iclick, Ihint
 {
     // Start is called before the first frame update
     // Vector2 startPoint, sendDir, pointA, pointB;   
@@ -44,7 +44,7 @@ public class ChangeDir : MonoBehaviour
         return transform.eulerAngles;
     }
 
-    void OnMouseDown (){
+    public void onClick(){
         if (OneOut){
             sendDir =  RotateDir(sendDir, 90);
             transform.Rotate( 0, 0, -90.0f );
@@ -82,8 +82,6 @@ public class ChangeDir : MonoBehaviour
     }
     void GotoNextScene(){
         SceneManager.LoadScene("Scene4");
-        // SceneManager.UnloadSceneAsync("Scene3");
-        // SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
     }
     private Vector2 RotateDir(Vector2 v, float angle){
         var x = v.x;
@@ -91,5 +89,8 @@ public class ChangeDir : MonoBehaviour
         var sin = System.Math.Sin(System.Math.PI * angle / 180);
         var cos = System.Math.Cos(System.Math.PI * angle / 180);
         return new Vector2((float)(x*cos+y*sin) ,(float)(x*(-sin)+y*cos));
+    }
+    public void Hint(){
+        GetComponent<Animator>().SetTrigger("Hint");
     }
 }

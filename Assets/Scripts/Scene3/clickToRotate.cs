@@ -4,17 +4,9 @@ using UnityEngine;
 using DG.Tweening;
 using UnityEngine.SceneManagement;
 
-public class clickToRotate : MonoBehaviour
+public class clickToRotate : MonoBehaviour, Iclick, Ihint
 {
-    void Start () {
-
-    }
-    
-    // Update is called once per frame
-    void Update () {
-    }
-
-    void OnMouseDown (){
+    public void onClick (){
         transform.Rotate( 0, 0, 45.0f );
         DOVirtual.DelayedCall(0.1f, IsPass);
     }
@@ -25,7 +17,8 @@ public class clickToRotate : MonoBehaviour
     }
     void GotoNextScene(){
         SceneManager.LoadScene("Scene4");
-        // SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
-        // SceneManager.UnloadSceneAsync("Scene3");
+    }
+    public void Hint(){
+        GetComponent<Animator>().SetTrigger("Hint");
     }
 }
