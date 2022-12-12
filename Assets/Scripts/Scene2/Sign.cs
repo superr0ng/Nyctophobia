@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Sign : MonoBehaviour
-{
+public class Sign : MonoBehaviour, Ihint
+{    
     bool[] isLit = new bool[15];
     bool isAllLit = false;
+    
     public void toggleByPlate(GameObject plate){
         int r = 0;
         int c = 0;
@@ -18,13 +19,6 @@ public class Sign : MonoBehaviour
         }
         toggle(r, c);
     }
-    // void printisLit(){
-    //     Debug.Log("===================");
-    //     for(int i = 0; i < plates.Length; i++){
-    //         if(isLit[i])
-    //             Debug.Log(i.ToString());
-    //     }
-    // }
     public void toggle(int r, int c){
         if(isAllLit)
             return;
@@ -61,5 +55,8 @@ public class Sign : MonoBehaviour
                 return;
         }
         isAllLit = true;
+    }
+    public void Hint(){
+        GetComponent<Animator>().SetTrigger("Hint");
     }
 }
