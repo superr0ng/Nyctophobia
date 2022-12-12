@@ -20,4 +20,7 @@ public class Plate : MonoBehaviour, Iclick
         // Debug.Log("I'm clicked");
         gameObject.transform.parent.parent.gameObject.GetComponent<Sign>().toggleByPlate(gameObject);
     }
+    public void Hint(){
+        
+    }
 }

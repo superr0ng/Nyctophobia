@@ -10,6 +10,7 @@ public class start : MonoBehaviour, Iclick
     public void onClick(){
         GotoNextScene();
     }
+    
     void GotoNextScene(){
         SceneManager.LoadScene("Scene1");
         // SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());

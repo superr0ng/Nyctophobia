@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class outerSign : MonoBehaviour, Iclick
+public class outerSign : MonoBehaviour, Iclick, Ihint
 {
     public GameObject inner;
     public GameObject outer;
@@ -14,6 +14,8 @@ public class outerSign : MonoBehaviour, Iclick
     public void onClick(){
         inner.SetActive(true);
         outer.SetActive(false);
-
+    }
+    public void Hint(){
+        
     }
 }

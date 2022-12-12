@@ -9,6 +9,7 @@ public class quit : MonoBehaviour
     public void onClick(){
         Exit();
     }
+    
     void Exit(){
         Application.Quit();
         // SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
