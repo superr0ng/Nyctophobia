@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class outer : MonoBehaviour
 {
-    public GameObject sign;
+    public GameObject cursor;
     public void AllowPlay(){
-        sign.GetComponent<outerSign>().AllowPlay();
+        cursor.SetActive(true);
     }
 }

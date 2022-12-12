@@ -2,13 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// using DG.Tweening;
-// using UnityEngine.SceneManagement;
-
 public class Signs : MonoBehaviour
 {
+    public GameObject cursor;
     public GameObject inner;
-    public GameObject outer;
+    public GameObject outerFinished;
     List<List<int>> toToggles = new List<List<int>>();
     // Start is called before the first frame update
     void Start(){
@@ -44,16 +42,8 @@ public class Signs : MonoBehaviour
             if(!SignScripts[i].IsAllLit())
                 return;
         }
-        outer.SetActive(true);
-        // outer.transform.GetChild(1).gameObject.SetActive(false);
-        // outer.transform.GetChild(2).gameObject.SetActive(true);
+        cursor.SetActive(false);
+        outerFinished.SetActive(true);
         inner.SetActive(false);
-        // DOVirtual.DelayedCall(4.5f, GotoNextScene);
     }
-   
-    /*void GotoNextScene(){
-        SceneManager.LoadScene("Scene3");
-        // SceneManager.UnloadSceneAsync("Scene2");
-        // SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
-    }*/
 }
