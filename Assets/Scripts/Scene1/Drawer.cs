@@ -10,7 +10,7 @@ public class Drawer : MonoBehaviour, Iclick
     public GameObject darkBackground;
     public GameObject curtain;
     public GameObject lights;
-    bool canPlay = false;
+    // bool canPlay = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,12 +21,12 @@ public class Drawer : MonoBehaviour, Iclick
         darkBackground.SetActive(false);
         Invoke("ChangeBackground", 3);
     }
-    public void AllowPlay(){
-        canPlay = true;
-    }
+    // public void AllowPlay(){
+    //     canPlay = true;
+    // }
     public void onClick(){
-        if(!canPlay)
-            return;
+        // if(!canPlay)
+        //     return;
         drawer.SetActive(true);
         match.SetActive(true);
     }

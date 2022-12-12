@@ -1090,6 +1090,7 @@ MonoBehaviour:
   candle: {fileID: 1526832427}
   player1: {fileID: 1061247799}
   candleLight: {fileID: 1125906549}
+  cursor: {fileID: 1440829294}
 --- !u!61 &369181481
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3382,7 +3383,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 929785a62a46143a591c1d69ede10e6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  drawercontroller: {fileID: 858944694}
+  cursor: {fileID: 1440829294}
 --- !u!1 &1108973781
 GameObject:
   m_ObjectHideFlags: 0
@@ -4484,7 +4485,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1440829295
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -5,13 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class player1 : MonoBehaviour
 {
-    public GameObject drawercontroller;
+    // public GameObject drawercontroller;
+    public GameObject cursor;
     public void AllowPlay(){
         Debug.Log("AllowPlay!");
-        drawercontroller.GetComponent<Drawer>().AllowPlay();
+        // drawercontroller.GetComponent<Drawer>().AllowPlay();
+        cursor.SetActive(true);
     }
     public void GotoNextScene(){
         SceneManager.LoadScene("Scene2");
-        // SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
     }
 }
