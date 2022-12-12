@@ -93,7 +93,6 @@ public class SendLightOne : MonoBehaviour
             Points.Add(nextStartPoint + newDirection * defaultRayDistance);
         }
     }
-
     public string getterGoToStatus(){
         return thenGoTo;
     }

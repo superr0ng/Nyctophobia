@@ -4,21 +4,14 @@ using UnityEngine;
 
 public class UpCamera : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {   
-    }
-
-    // Update is called once per frame
-    void Update ()
-    {
-
-    }
-
+    public Animator animator;
+    
     void OnMouseDown (){
-        // Camera.main.transform.Translate(0,Time.deltaTime,0);
-        transform.position += new Vector3 ( 0,1,0 );
-        Camera.main.transform.position += new Vector3 ( 0,1,0 );
-        GameObject.Find("Down").transform.position += new Vector3 ( 0,1,0 );
+        if(transform.position.y < 6)
+            animator.SetTrigger("MoveUp");
+
+        // transform.position += new Vector3 ( 0,1,0 );
+        // Camera.main.transform.position += new Vector3 ( 0,1,0 );
+        // GameObject.Find("Down").transform.position += new Vector3 ( 0,1,0 );
     }
 }
