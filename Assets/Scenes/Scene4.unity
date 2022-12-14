@@ -3386,6 +3386,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cursor: {fileID: 579324399}
   monster: {fileID: 144774241}
+  cursorCanClick: {fileID: 2800000, guid: 9062bbf28070a43c29463415b7e3945c, type: 3}
+  hotSpot: {x: 12, y: 12}
 --- !u!4 &758487030
 Transform:
   m_ObjectHideFlags: 0
