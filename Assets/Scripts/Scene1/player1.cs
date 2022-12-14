@@ -8,7 +8,6 @@ public class player1 : MonoBehaviour
     // public GameObject drawercontroller;
     public GameObject cursor;
     public void AllowPlay(){
-        Debug.Log("AllowPlay!");
         // drawercontroller.GetComponent<Drawer>().AllowPlay();
         cursor.SetActive(true);
     }
