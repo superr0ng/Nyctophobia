@@ -11,11 +11,14 @@ public class Match : MonoBehaviour, Iclick, Ihint
     public Animator player1;
     public GameObject candleLight;
     public GameObject cursor;
+
+
     public void onClick(){
         candle.SetBool("isMatchClicked", true);
         candleLight.SetActive(true);
         player1.SetBool("isMatch", true);
         cursor.SetActive(false);
+        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
         gameObject.SetActive(false);
     }
     public void Hint(){

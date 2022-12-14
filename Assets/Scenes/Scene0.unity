@@ -896,3 +896,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ea9315a477324b77b05c89caf24e05c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cursorCanClick: {fileID: 2800000, guid: 9062bbf28070a43c29463415b7e3945c, type: 3}
+  hotSpot: {x: 12, y: 12}
