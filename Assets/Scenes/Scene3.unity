@@ -1018,6 +1018,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13a853ec5ce104f7aa2194624bc2cb74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 1425786701}
 --- !u!95 &276915090
 Animator:
   serializedVersion: 4
@@ -4978,6 +4979,7 @@ MonoBehaviour:
   play: {fileID: 701098243}
   before: {fileID: 1997615370}
   camera: {fileID: 1425786694}
+  animator: {fileID: 1425786701}
 --- !u!212 &1997615373
 SpriteRenderer:
   m_ObjectHideFlags: 0
