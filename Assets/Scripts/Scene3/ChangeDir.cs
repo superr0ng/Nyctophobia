@@ -2,13 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
-using UnityEngine.SceneManagement;
+// using UnityEngine.SceneManagement;
 
 public class ChangeDir : MonoBehaviour, Iclick, Ihint
 {
     // Start is called before the first frame update
     // Vector2 startPoint, sendDir, pointA, pointB;   
     // [SerializeField]
+    public GameObject play;
+    public GameObject after;
     public Vector2 startPoint, direction;
     public bool OneOut;
     public bool TwoOut;
@@ -28,7 +30,7 @@ public class ChangeDir : MonoBehaviour, Iclick, Ihint
     {
         if(!gameEnd && GameObject.Find("GoToTwo-out").GetComponent<SendLightThree>().getterPassStatus()){
             gameEnd = true;
-            DOVirtual.DelayedCall(1, GotoNextScene);
+            DOVirtual.DelayedCall(1, StopPlay);
         }
     }
     
@@ -80,9 +82,13 @@ public class ChangeDir : MonoBehaviour, Iclick, Ihint
             transform.Rotate( 0, 0, 45.0f );
         }
     }
-    void GotoNextScene(){
-        SceneManager.LoadScene("Scene4");
+    void StopPlay(){
+        after.SetActive(true);
+        play.SetActive(false);
     }
+    // void GotoNextScene(){
+    //     SceneManager.LoadScene("Scene4");
+    // }
     private Vector2 RotateDir(Vector2 v, float angle){
         var x = v.x;
         var y = v.y;
