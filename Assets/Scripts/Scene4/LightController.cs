@@ -8,6 +8,9 @@ public class LightController : MonoBehaviour
 {
     public GameObject[] lights;
     public GameObject monster;
+    public GameObject play;
+    public GameObject after;
+    public GameObject cursor;
     const int MAXSIZE = 10;
     int[] duration = new int[MAXSIZE];
     int[] durCnt = new int[MAXSIZE];
@@ -40,8 +43,13 @@ public class LightController : MonoBehaviour
         MonsterOpacity(nLit);
 
         if(isAllLit){
-            Debug.Log("EXIT");
-            DOVirtual.DelayedCall(2, EndGame);
+            cursor.SetActive(false);
+            Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+            after.SetActive(true);
+            monster.SetActive(false);
+            play.SetActive(false);
+            // Debug.Log("EXIT");
+            // DOVirtual.DelayedCall(2, EndGame);
         }
     }
     public bool IsAllLit(){
@@ -88,8 +96,8 @@ public class LightController : MonoBehaviour
         MonsterOpacity(nLit);
         // Debug.Log(monster.GetComponent<SpriteRenderer>().color.a.ToString());
     }
-    void EndGame(){
+    /* void EndGame(){
         SceneManager.LoadScene("Scene0");
         // SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
-    }
+    }*/ 
 }

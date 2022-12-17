@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class before : MonoBehaviour
+public class Before : MonoBehaviour
 {
     public GameObject cursor;
     public GameObject monster;
+    public GameObject before;
+    public GameObject play;
     public Texture2D cursorCanClick;
     public Vector2 hotSpot = Vector2.zero;
 
@@ -17,8 +19,7 @@ public class before : MonoBehaviour
         Debug.Log("AllowPlay!");
         cursor.SetActive(true);
         Cursor.SetCursor(cursorCanClick, hotSpot, CursorMode.Auto);
+        play.SetActive(true);
+        before.SetActive(false);
     }
-    // public void GotoNextScene(){
-    //     SceneManager.LoadScene("Scene2");
-    // }
 }
