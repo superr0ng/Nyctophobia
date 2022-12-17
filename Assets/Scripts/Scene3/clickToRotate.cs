@@ -8,6 +8,7 @@ public class clickToRotate : MonoBehaviour, Iclick, Ihint
 {
     public GameObject play;
     public GameObject after;
+    public GameObject camera;
 
     public void onClick (){
         transform.Rotate( 0, 0, 45.0f );
@@ -15,6 +16,7 @@ public class clickToRotate : MonoBehaviour, Iclick, Ihint
     }
     void IsPass(){
         if(GameObject.Find("GoToTwo-out").GetComponent<SendLightThree>().getterPassStatus()){
+            camera.GetComponent<LineRenderer>().enabled = !camera.GetComponent<LineRenderer>().enabled;
             DOVirtual.DelayedCall(3, StopPlay);
         }
     }

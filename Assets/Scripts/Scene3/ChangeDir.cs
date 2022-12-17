@@ -11,6 +11,7 @@ public class ChangeDir : MonoBehaviour, Iclick, Ihint
     // [SerializeField]
     public GameObject play;
     public GameObject after;
+    public GameObject camera;
     public Vector2 startPoint, direction;
     public bool OneOut;
     public bool TwoOut;
@@ -30,6 +31,7 @@ public class ChangeDir : MonoBehaviour, Iclick, Ihint
     {
         if(!gameEnd && GameObject.Find("GoToTwo-out").GetComponent<SendLightThree>().getterPassStatus()){
             gameEnd = true;
+            camera.GetComponent<LineRenderer>().enabled = !camera.GetComponent<LineRenderer>().enabled;
             DOVirtual.DelayedCall(1, StopPlay);
         }
     }

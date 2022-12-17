@@ -257,6 +257,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   play: {fileID: 701098243}
   after: {fileID: 276915087}
+  camera: {fileID: 1425786694}
   startPoint: {x: 14.2, y: 13.2}
   direction: {x: 14.3, y: 13.2}
   OneOut: 0
@@ -770,6 +771,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   play: {fileID: 701098243}
   after: {fileID: 276915087}
+  camera: {fileID: 1425786694}
 --- !u!61 &174756278
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1070,6 +1072,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   play: {fileID: 701098243}
   after: {fileID: 276915087}
+  camera: {fileID: 1425786694}
 --- !u!61 &315303367
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1219,6 +1222,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   play: {fileID: 701098243}
   after: {fileID: 276915087}
+  camera: {fileID: 1425786694}
 --- !u!61 &331092969
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2938,7 +2942,7 @@ LineRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1425786694}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -3296,6 +3300,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   play: {fileID: 701098243}
   after: {fileID: 276915087}
+  camera: {fileID: 1425786694}
   startPoint: {x: 14.2, y: 13.2}
   direction: {x: 14.3, y: 13.2}
   OneOut: 0
@@ -3539,6 +3544,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   play: {fileID: 701098243}
   after: {fileID: 276915087}
+  camera: {fileID: 1425786694}
 --- !u!61 &1563115844
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3856,6 +3862,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   play: {fileID: 701098243}
   after: {fileID: 276915087}
+  camera: {fileID: 1425786694}
 --- !u!61 &1608277816
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4100,6 +4107,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   play: {fileID: 701098243}
   after: {fileID: 276915087}
+  camera: {fileID: 1425786694}
 --- !u!95 &1686355714
 Animator:
   serializedVersion: 4
@@ -4518,6 +4526,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   play: {fileID: 701098243}
   after: {fileID: 276915087}
+  camera: {fileID: 1425786694}
   startPoint: {x: 3.35, y: 5.75}
   direction: {x: 3.5, y: 5.9}
   OneOut: 0
@@ -4780,6 +4789,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   play: {fileID: 701098243}
   after: {fileID: 276915087}
+  camera: {fileID: 1425786694}
   startPoint: {x: 16.8, y: 8.3}
   direction: {x: 16.8, y: 10}
   OneOut: 1
@@ -4967,6 +4977,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   play: {fileID: 701098243}
   before: {fileID: 1997615370}
+  camera: {fileID: 1425786694}
 --- !u!212 &1997615373
 SpriteRenderer:
   m_ObjectHideFlags: 0
