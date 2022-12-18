@@ -5,9 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class OuterFinished : MonoBehaviour
 {
+    void Start(){
+        gameObject.SetActive(false);
+    }
     public void GotoNextScene(){
         SceneManager.LoadScene("Scene3");
-        // SceneManager.UnloadSceneAsync("Scene2");
-        // SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
     }
 }
