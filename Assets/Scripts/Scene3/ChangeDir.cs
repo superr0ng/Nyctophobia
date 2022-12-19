@@ -31,6 +31,7 @@ public class ChangeDir : MonoBehaviour, Iclick, Ihint
     {
         if(!gameEnd && GameObject.Find("GoToTwo-out").GetComponent<SendLightThree>().getterPassStatus()){
             gameEnd = true;
+            Cursor.visible = false;
             camera.GetComponent<LineRenderer>().enabled = !camera.GetComponent<LineRenderer>().enabled;
             DOVirtual.DelayedCall(1, StopPlay);
         }

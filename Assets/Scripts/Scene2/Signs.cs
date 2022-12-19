@@ -43,7 +43,8 @@ public class Signs : MonoBehaviour
                 return;
         }
         cursor.SetActive(false);
-        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+        Cursor.visible = false;
+        // Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
         outerFinished.SetActive(true);
         inner.SetActive(false);
     }

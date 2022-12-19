@@ -18,7 +18,8 @@ public class Match : MonoBehaviour, Iclick, Ihint
         candleLight.SetActive(true);
         player1.SetBool("isMatch", true);
         cursor.SetActive(false);
-        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+        Cursor.visible = false;
+        // Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
         gameObject.SetActive(false);
     }
     public void Hint(){

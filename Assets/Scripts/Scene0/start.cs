@@ -21,6 +21,7 @@ public class start : MonoBehaviour, Iclick
     
     void GotoNextScene(){
         SceneManager.LoadScene("Scene1");
+        Cursor.visible = false;
         // SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
     }
 }

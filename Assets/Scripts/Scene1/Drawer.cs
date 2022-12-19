@@ -13,7 +13,8 @@ public class Drawer : MonoBehaviour, Iclick, Ihint
     {
         drawer.SetActive(false);
         match.SetActive(false);
-        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+        // Cursor.visible = false;
+        // Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
     }
     public void onClick(){
         drawer.SetActive(true);

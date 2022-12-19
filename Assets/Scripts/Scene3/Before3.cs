@@ -10,6 +10,7 @@ public class Before3 : MonoBehaviour
     public Animator animator;
     public void AllowPlay(){
         play.SetActive(true);
+        Cursor.visible = true;
         camera.GetComponent<LineRenderer>().enabled = !camera.GetComponent<LineRenderer>().enabled;
         before.SetActive(false);
         animator.SetTrigger("MoveDown");

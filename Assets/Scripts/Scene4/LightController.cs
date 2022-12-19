@@ -44,7 +44,8 @@ public class LightController : MonoBehaviour
 
         if(isAllLit){
             cursor.SetActive(false);
-            Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+            Cursor.visible = false;
+            // Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
             after.SetActive(true);
             monster.SetActive(false);
             play.SetActive(false);
