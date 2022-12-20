@@ -6,9 +6,11 @@ using UnityEngine.SceneManagement;
 public class After : MonoBehaviour
 {
     public GameObject monster;
+    // void Start(){
+    //     gameObject.SetActive(false);
+    // }
     public void EndGame(){
         SceneManager.LoadScene("Scene0");
-        // SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
     }
     public void MonsterDisappears(){
         monster.SetActive(false);

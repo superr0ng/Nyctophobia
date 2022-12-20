@@ -11,6 +11,7 @@ public class LightController : MonoBehaviour
     public GameObject play;
     public GameObject after;
     public GameObject cursor;
+    
     const int MAXSIZE = 10;
     int[] duration = new int[MAXSIZE];
     int[] durCnt = new int[MAXSIZE];
@@ -47,6 +48,7 @@ public class LightController : MonoBehaviour
             Cursor.visible = false;
             // Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
             after.SetActive(true);
+            monster.SetActive(false);
             play.SetActive(false);
         }
     }

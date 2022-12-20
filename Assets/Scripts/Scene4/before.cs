@@ -10,13 +10,13 @@ public class Before : MonoBehaviour
     public GameObject before;
     public GameObject play;
     // public Texture2D cursorCanClick;
-    public Vector2 hotSpot = Vector2.zero;
-
+    // public Vector2 hotSpot = Vector2.zero;
+    
     public void MonsterAppears(){
         monster.SetActive(true);
     }
     public void AllowPlay(){
-        Debug.Log("AllowPlay!");
+        // Debug.Log("AllowPlay!");
         cursor.SetActive(true);
         Cursor.visible = true;
         // Cursor.SetCursor(cursorCanClick, hotSpot, CursorMode.Auto);
