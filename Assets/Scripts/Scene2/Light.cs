@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class Light : MonoBehaviour, Iclick, Ihint
 {
+
+    public AudioSource music;
+    
     public void onClick(){
         // Debug.Log("clicked");
 
@@ -12,6 +15,7 @@ public class Light : MonoBehaviour, Iclick, Ihint
         GetComponentInParent<LightController>().LightByObject(gameObject);
     }
     public void Hint(){
+        music.Play();
         GetComponent<Animator>().SetTrigger("Hint");
     }
 }

@@ -6,6 +6,7 @@ public class Sign : MonoBehaviour, Ihint
 {    
     bool[] isLit = new bool[15];
     bool isAllLit = false;
+    public AudioSource music;
     
     public void toggleByPlate(GameObject plate){
         int r = 0;
@@ -57,6 +58,7 @@ public class Sign : MonoBehaviour, Ihint
         isAllLit = true;
     }
     public void Hint(){
+        music.Play();
         GetComponent<Animator>().SetTrigger("Hint");
     }
 }
