@@ -47,7 +47,7 @@ public class LightController : MonoBehaviour
             Cursor.visible = false;
             // Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
             after.SetActive(true);
-            monster.SetActive(false);
+            // monster.SetActive(false);
             play.SetActive(false);
             // Debug.Log("EXIT");
             // DOVirtual.DelayedCall(2, EndGame);
