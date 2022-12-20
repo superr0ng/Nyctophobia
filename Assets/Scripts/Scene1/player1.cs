@@ -8,7 +8,7 @@ public class player1 : MonoBehaviour
     // public GameObject drawercontroller;
     public GameObject cursor;
     // public Texture2D cursorCanClick;
-    public Vector2 hotSpot = Vector2.zero;
+    // public Vector2 hotSpot = Vector2.zero;
 
     public GameObject brightBackground;
     public GameObject darkBackground;
