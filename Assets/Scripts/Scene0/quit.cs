@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class quit : MonoBehaviour, Iclick
 {
+    public AudioSource music;
     public void onClick(){
+        music.Play();
         Exit();
     }
     

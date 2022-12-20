@@ -11,6 +11,13 @@ public class Before : MonoBehaviour
     public GameObject play;
     // public Texture2D cursorCanClick;
     // public Vector2 hotSpot = Vector2.zero;
+    // public AudioClip music;
+
+    // void Start() {
+    //     AudioSource source = GameObject.FindGameObjectWithTag ("sound").GetComponent<AudioSource> ();
+    //     source.clip = music;
+    //     source.Play();
+    // }
     
     public void MonsterAppears(){
         monster.SetActive(true);

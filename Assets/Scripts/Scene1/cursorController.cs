@@ -6,9 +6,11 @@ using System.Linq;
 public class cursorController : MonoBehaviour
 {
     public Texture2D cursorCanClick;
+    public AudioSource music;
 
     // Start is called before the first frame update
     void Start() {
+        Cursor.visible = true;
         Vector2 hotSpot = new Vector2(cursorCanClick.width * 0.26f, cursorCanClick.height * 0.26f);
         Cursor.SetCursor(cursorCanClick, hotSpot, CursorMode.Auto);
     }
@@ -29,6 +31,7 @@ public class cursorController : MonoBehaviour
                 Ihint[] toHints = FindObjectsOfType<MonoBehaviour>().OfType<Ihint>().ToArray();
                 foreach(Ihint toHint in toHints)
                     toHint.Hint();
+                music.Play();
             }
         }
     }

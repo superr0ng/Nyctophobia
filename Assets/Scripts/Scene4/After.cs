@@ -9,7 +9,10 @@ public class After : MonoBehaviour
     // void Start(){
     //     gameObject.SetActive(false);
     // }
+
     public void EndGame(){
+        GameObject bgm = GameObject.Find("bgm");
+        Destroy(bgm);
         SceneManager.LoadScene("Scene0");
     }
     public void MonsterDisappears(){

@@ -2496,6 +2496,7 @@ MonoBehaviour:
   play: {fileID: 1957973167}
   after: {fileID: 910688613}
   cursor: {fileID: 579324399}
+  music: {fileID: 8300000, guid: 391bce9c785c5459f8c1f8d7545b702f, type: 3}
 --- !u!4 &421181384
 Transform:
   m_ObjectHideFlags: 0
@@ -5147,6 +5148,7 @@ GameObject:
   - component: {fileID: 947563416}
   - component: {fileID: 947563415}
   - component: {fileID: 947563418}
+  - component: {fileID: 947563419}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -5253,6 +5255,19 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!114 &947563419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 947563414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b951fa99829d43a1b03a519ac841e4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obje: {fileID: 0}
 --- !u!1 &1042732642
 GameObject:
   m_ObjectHideFlags: 0

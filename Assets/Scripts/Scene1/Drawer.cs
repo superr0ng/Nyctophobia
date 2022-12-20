@@ -7,6 +7,7 @@ public class Drawer : MonoBehaviour, Iclick, Ihint
     public GameObject drawer;
     public GameObject match;
     public Animator drawerAnimator;
+    public AudioSource music;
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +18,7 @@ public class Drawer : MonoBehaviour, Iclick, Ihint
         // Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
     }
     public void onClick(){
+        music.Play();
         drawer.SetActive(true);
         match.SetActive(true);
         gameObject.SetActive(false);

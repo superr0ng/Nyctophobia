@@ -6,11 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class start : MonoBehaviour, Iclick
 {
+    public AudioSource music;
     void Start(){
         Cursor.visible = true;
     }
 
     public void onClick(){
+        music.Play();
         GotoNextScene();
     }
     

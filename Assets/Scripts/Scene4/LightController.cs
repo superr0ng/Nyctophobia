@@ -11,6 +11,7 @@ public class LightController : MonoBehaviour
     public GameObject play;
     public GameObject after;
     public GameObject cursor;
+    public AudioClip music;
     
     const int MAXSIZE = 10;
     int[] duration = new int[MAXSIZE];
@@ -50,6 +51,9 @@ public class LightController : MonoBehaviour
             after.SetActive(true);
             monster.SetActive(false);
             play.SetActive(false);
+            AudioSource source = GameObject.Find("bgm").GetComponent<AudioSource> ();
+            source.clip = music;
+            source.Play();
         }
     }
     public bool IsAllLit(){

@@ -11,9 +11,11 @@ public class Match : MonoBehaviour, Iclick, Ihint
     public Animator player1;
     public GameObject candleLight;
     public GameObject cursor;
+    public AudioSource music;
 
 
     public void onClick(){
+        music.Play();
         candle.SetBool("isMatchClicked", true);
         candleLight.SetActive(true);
         player1.SetBool("isMatch", true);
