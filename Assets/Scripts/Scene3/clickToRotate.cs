@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
-// using UnityEngine.SceneManagement;
 
 public class clickToRotate : MonoBehaviour, Iclick, Ihint
 {
@@ -16,17 +15,14 @@ public class clickToRotate : MonoBehaviour, Iclick, Ihint
     }
     void IsPass(){
         if(GameObject.Find("GoToTwo-out").GetComponent<SendLightThree>().getterPassStatus()){
-            camera.GetComponent<LineRenderer>().enabled = !camera.GetComponent<LineRenderer>().enabled;
-            DOVirtual.DelayedCall(3, StopPlay);
+            DOVirtual.DelayedCall(1, StopPlay);
         }
     }
     void StopPlay(){
         after.SetActive(true);
         play.SetActive(false);
+        camera.GetComponent<LineRenderer>().enabled = false;
     }
-    // void GotoNextScene(){
-    //     SceneManager.LoadScene("Scene4");
-    // }
     public void Hint(){
         GetComponent<Animator>().SetTrigger("Hint");
     }

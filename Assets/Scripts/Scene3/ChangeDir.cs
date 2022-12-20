@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
-// using UnityEngine.SceneManagement;
 
 public class ChangeDir : MonoBehaviour, Iclick, Ihint
 {
@@ -32,7 +31,6 @@ public class ChangeDir : MonoBehaviour, Iclick, Ihint
         if(!gameEnd && GameObject.Find("GoToTwo-out").GetComponent<SendLightThree>().getterPassStatus()){
             gameEnd = true;
             Cursor.visible = false;
-            camera.GetComponent<LineRenderer>().enabled = !camera.GetComponent<LineRenderer>().enabled;
             DOVirtual.DelayedCall(1, StopPlay);
         }
     }
@@ -66,7 +64,7 @@ public class ChangeDir : MonoBehaviour, Iclick, Ihint
                 startPoint = transform.position - new Vector3(0.5f, 0f, 0);
         }
         if (TwoOut){
-            sendDir =  RotateDir(sendDir, 90);
+            sendDir = RotateDir(sendDir, 90);
             transform.Rotate( 0, 0, -90.0f );
             if(dir == 3) dir = 0;
             else dir += 1;
@@ -81,17 +79,16 @@ public class ChangeDir : MonoBehaviour, Iclick, Ihint
                 startPoint = transform.position - new Vector3(0.35f, 0, 0) + new Vector3(0, 0.35f, 0);
         }
         if (CanRotate) {
-            sendDir =  RotateDir(sendDir, 45);
+            sendDir = RotateDir(sendDir, 45);
             transform.Rotate( 0, 0, 45.0f );
         }
     }
     void StopPlay(){
         after.SetActive(true);
         play.SetActive(false);
+        camera.GetComponent<LineRenderer>().enabled = false;
+
     }
-    // void GotoNextScene(){
-    //     SceneManager.LoadScene("Scene4");
-    // }
     private Vector2 RotateDir(Vector2 v, float angle){
         var x = v.x;
         var y = v.y;
