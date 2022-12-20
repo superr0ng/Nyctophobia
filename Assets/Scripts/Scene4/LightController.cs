@@ -47,10 +47,7 @@ public class LightController : MonoBehaviour
             Cursor.visible = false;
             // Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
             after.SetActive(true);
-            // monster.SetActive(false);
             play.SetActive(false);
-            // Debug.Log("EXIT");
-            // DOVirtual.DelayedCall(2, EndGame);
         }
     }
     public bool IsAllLit(){
@@ -96,9 +93,5 @@ public class LightController : MonoBehaviour
         int nLit = Compare();
         MonsterOpacity(nLit);
         // Debug.Log(monster.GetComponent<SpriteRenderer>().color.a.ToString());
-    }
-    /* void EndGame(){
-        SceneManager.LoadScene("Scene0");
-        // SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
-    }*/ 
+    } 
 }
