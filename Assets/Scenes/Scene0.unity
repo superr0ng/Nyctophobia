@@ -465,6 +465,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f5f8fddae63d4d309296e3a2c6b5f59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cursorCanClick: {fileID: 2800000, guid: 74ad1ad78aea748ef9d6e364bc37a88c, type: 3}
 --- !u!4 &1536946640
 Transform:
   m_ObjectHideFlags: 0
@@ -896,5 +897,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ea9315a477324b77b05c89caf24e05c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cursorCanClick: {fileID: 2800000, guid: 74ad1ad78aea748ef9d6e364bc37a88c, type: 3}
-  hotSpot: {x: 0, y: 0}
