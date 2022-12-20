@@ -7,9 +7,15 @@ public class Before3 : MonoBehaviour
     public GameObject play;
     public GameObject before;
     public GameObject camera;
+    public GameObject upButton;
+    public GameObject downButton;
     public Animator animator;
+
+
     public void AllowPlay(){
         // animator.SetTrigger("MoveZoomup");
+        upButton.SetActive(true);
+        downButton.SetActive(true);
         play.SetActive(true);
         Cursor.visible = true;
         camera.GetComponent<LineRenderer>().enabled = !camera.GetComponent<LineRenderer>().enabled;

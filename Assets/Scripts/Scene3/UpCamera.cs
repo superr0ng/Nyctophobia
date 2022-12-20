@@ -5,6 +5,7 @@ using UnityEngine;
 public class UpCamera : MonoBehaviour, Iclick, Ihint
 {
     public Animator animator;
+    public AudioSource hintMusic;
     
     public void onClick (){
         if(transform.position.y < 6)
@@ -16,5 +17,6 @@ public class UpCamera : MonoBehaviour, Iclick, Ihint
     }
     public void Hint(){
         GetComponent<Animator>().SetTrigger("Hint");
+        hintMusic.Play();
     }
 }

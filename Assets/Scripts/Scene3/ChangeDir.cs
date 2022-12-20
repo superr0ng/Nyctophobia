@@ -18,6 +18,8 @@ public class ChangeDir : MonoBehaviour, Iclick, Ihint
     public int dir; // 0 = up, 1 = left, 2 = down, 3 = right
     // bool gameStart = false;
     bool gameEnd = false;
+    public AudioSource hintMusic;
+    public AudioSource rotateMusic;
 
     Vector2 sendDir;
     void Start()
@@ -82,6 +84,7 @@ public class ChangeDir : MonoBehaviour, Iclick, Ihint
             sendDir = RotateDir(sendDir, 45);
             transform.Rotate( 0, 0, 45.0f );
         }
+        rotateMusic.Play();
     }
     void StopPlay(){
         after.SetActive(true);
@@ -98,5 +101,6 @@ public class ChangeDir : MonoBehaviour, Iclick, Ihint
     }
     public void Hint(){
         GetComponent<Animator>().SetTrigger("Hint");
+        hintMusic.Play();
     }
 }
