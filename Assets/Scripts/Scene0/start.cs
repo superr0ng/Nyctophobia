@@ -6,6 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class start : MonoBehaviour, Iclick
 {
+    void Start(){
+        Cursor.visible = true;
+    }
+
     public void onClick(){
         GotoNextScene();
     }
