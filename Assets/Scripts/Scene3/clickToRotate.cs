@@ -8,6 +8,9 @@ public class clickToRotate : MonoBehaviour, Iclick, Ihint
     public GameObject play;
     public GameObject after;
     public GameObject camera;
+    public GameObject brightBackground;
+    public GameObject upButton;
+    public GameObject downButton;
     public AudioSource hintMusic;
     public AudioSource rotateMusic;
     public AudioSource LightMusic;
@@ -20,6 +23,9 @@ public class clickToRotate : MonoBehaviour, Iclick, Ihint
     void IsPass(){
         if(GameObject.Find("GoToTwo-out").GetComponent<SendLightThree>().getterPassStatus()){
             LightMusic.Play();
+            brightBackground.SetActive(true);
+            upButton.SetActive(false);
+            downButton.SetActive(false);
             DOVirtual.DelayedCall(1, StopPlay);
         }
     }
