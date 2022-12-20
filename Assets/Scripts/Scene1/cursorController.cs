@@ -5,6 +5,12 @@ using System.Linq;
 
 public class cursorController : MonoBehaviour
 {
+    public Texture2D cursorCanClick;
+    
+    void Start() {
+        Cursor.SetCursor(cursorCanClick, Vector2.zero, CursorMode.Auto);
+    }
+
     // Update is called once per frame
     void Update()
     {
