@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class before : MonoBehaviour
+public class Before : MonoBehaviour
 {
     public GameObject cursor;
     public GameObject monster;
