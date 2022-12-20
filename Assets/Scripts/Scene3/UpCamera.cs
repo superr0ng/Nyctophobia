@@ -6,8 +6,10 @@ public class UpCamera : MonoBehaviour, Iclick, Ihint
 {
     public Animator animator;
     public AudioSource hintMusic;
+    public AudioSource clickMusic;
     
     public void onClick (){
+        clickMusic.Play();
         if(transform.position.y < 6)
             animator.SetTrigger("MoveUp");
 

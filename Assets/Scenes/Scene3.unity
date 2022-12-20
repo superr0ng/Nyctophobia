@@ -260,6 +260,8 @@ MonoBehaviour:
   camera: {fileID: 1425786694}
   startPoint: {x: 14.2, y: 13.2}
   direction: {x: 14.3, y: 13.2}
+  upButton: {fileID: 153451040}
+  downButton: {fileID: 1692182228}
   OneOut: 0
   TwoOut: 0
   CanRotate: 1
@@ -791,6 +793,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 1425786701}
   hintMusic: {fileID: 834762061}
+  clickMusic: {fileID: 791995490}
 --- !u!95 &153451046
 Animator:
   serializedVersion: 4
@@ -2156,6 +2159,134 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &791995489
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 791995491}
+  - component: {fileID: 791995490}
+  m_Layer: 0
+  m_Name: UpDownSound
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &791995490
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 791995489}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: d31dcffebf9cb424b81a3bea7181dd45, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &791995491
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 791995489}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.2197129, y: 0.35874453, z: 0.032337837}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &804743142
 GameObject:
   m_ObjectHideFlags: 0
@@ -4275,6 +4406,8 @@ MonoBehaviour:
   camera: {fileID: 1425786694}
   startPoint: {x: 14.2, y: 13.2}
   direction: {x: 14.3, y: 13.2}
+  upButton: {fileID: 153451040}
+  downButton: {fileID: 1692182228}
   OneOut: 0
   TwoOut: 0
   CanRotate: 1
@@ -5213,6 +5346,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 1425786701}
   hintMusic: {fileID: 834762061}
+  clickMusic: {fileID: 791995490}
 --- !u!61 &1692182234
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5513,6 +5647,8 @@ MonoBehaviour:
   camera: {fileID: 1425786694}
   startPoint: {x: 3.35, y: 5.75}
   direction: {x: 3.5, y: 5.9}
+  upButton: {fileID: 153451040}
+  downButton: {fileID: 1692182228}
   OneOut: 0
   TwoOut: 1
   CanRotate: 0
@@ -5778,6 +5914,8 @@ MonoBehaviour:
   camera: {fileID: 1425786694}
   startPoint: {x: 16.8, y: 8.3}
   direction: {x: 16.8, y: 10}
+  upButton: {fileID: 153451040}
+  downButton: {fileID: 1692182228}
   OneOut: 1
   TwoOut: 0
   CanRotate: 0

@@ -9,15 +9,10 @@ public class Before : MonoBehaviour
     public GameObject monster;
     public GameObject before;
     public GameObject play;
+    public GameObject stage;
     // public Texture2D cursorCanClick;
     // public Vector2 hotSpot = Vector2.zero;
-    // public AudioClip music;
-
-    // void Start() {
-    //     AudioSource source = GameObject.FindGameObjectWithTag ("sound").GetComponent<AudioSource> ();
-    //     source.clip = music;
-    //     source.Play();
-    // }
+    
     
     public void MonsterAppears(){
         monster.SetActive(true);
@@ -25,6 +20,7 @@ public class Before : MonoBehaviour
     public void AllowPlay(){
         // Debug.Log("AllowPlay!");
         cursor.SetActive(true);
+        stage.SetActive(true);
         Cursor.visible = true;
         // Cursor.SetCursor(cursorCanClick, hotSpot, CursorMode.Auto);
         play.SetActive(true);

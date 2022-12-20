@@ -11,7 +11,9 @@ public class LightController : MonoBehaviour
     public GameObject play;
     public GameObject after;
     public GameObject cursor;
-    public AudioClip music;
+    public GameObject stage;
+    public AudioClip BGMMusic;
+    public AudioSource lightBuldMusic;
     
     const int MAXSIZE = 10;
     int[] duration = new int[MAXSIZE];
@@ -37,6 +39,7 @@ public class LightController : MonoBehaviour
             if(lights[i] == light){
                 // Debug.Log(i.ToString() + "is clicked");
                 isLit[i] = true;
+                lightBuldMusic.Play();
                 durCnt[i] = 0;
                 break;
             }
@@ -51,8 +54,9 @@ public class LightController : MonoBehaviour
             after.SetActive(true);
             monster.SetActive(false);
             play.SetActive(false);
+            stage.SetActive(false);
             AudioSource source = GameObject.Find("bgm").GetComponent<AudioSource> ();
-            source.clip = music;
+            source.clip = BGMMusic;
             source.Play();
         }
     }

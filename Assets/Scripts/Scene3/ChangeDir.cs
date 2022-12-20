@@ -12,6 +12,8 @@ public class ChangeDir : MonoBehaviour, Iclick, Ihint
     public GameObject after;
     public GameObject camera;
     public Vector2 startPoint, direction;
+    public GameObject upButton;
+    public GameObject downButton;
     public bool OneOut;
     public bool TwoOut;
     public bool CanRotate;
@@ -33,6 +35,8 @@ public class ChangeDir : MonoBehaviour, Iclick, Ihint
         if(!gameEnd && GameObject.Find("GoToTwo-out").GetComponent<SendLightThree>().getterPassStatus()){
             gameEnd = true;
             Cursor.visible = false;
+            upButton.SetActive(false);
+            downButton.SetActive(false);
             DOVirtual.DelayedCall(1, StopPlay);
         }
     }
