@@ -6,9 +6,11 @@ using System.Linq;
 public class cursorController : MonoBehaviour
 {
     public Texture2D cursorCanClick;
-    
+
+    // Start is called before the first frame update
     void Start() {
-        Cursor.SetCursor(cursorCanClick, Vector2.zero, CursorMode.Auto);
+        Vector2 hotSpot = new Vector2(cursorCanClick.width * 0.26f, cursorCanClick.height * 0.26f);
+        Cursor.SetCursor(cursorCanClick, hotSpot, CursorMode.Auto);
     }
 
     // Update is called once per frame
