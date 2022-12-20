@@ -6507,6 +6507,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f5f8fddae63d4d309296e3a2c6b5f59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cursorCanClick: {fileID: 0}
 --- !u!4 &442459278
 Transform:
   m_ObjectHideFlags: 0
@@ -6718,7 +6719,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cursor: {fileID: 442459276}
-  cursorCanClick: {fileID: 2800000, guid: 9062bbf28070a43c29463415b7e3945c, type: 3}
   hotSpot: {x: 12, y: 12}
 --- !u!1 &483796950
 GameObject:
@@ -8617,7 +8617,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &629053675
 Transform:
   m_ObjectHideFlags: 0
