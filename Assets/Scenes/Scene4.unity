@@ -1412,7 +1412,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: e70ca09221ddc40d995483d2e65d2110, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2497,7 +2497,6 @@ MonoBehaviour:
   play: {fileID: 1957973167}
   after: {fileID: 910688613}
   cursor: {fileID: 579324399}
-  stage: {fileID: 542975565}
   BGMMusic: {fileID: 8300000, guid: 391bce9c785c5459f8c1f8d7545b702f, type: 3}
   lightBuldMusic: {fileID: 1840139931}
 --- !u!4 &421181384
@@ -3870,7 +3869,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6add110dd97794e50a98fecbcfc8a083, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -4240,7 +4239,6 @@ MonoBehaviour:
   monster: {fileID: 144774241}
   before: {fileID: 758487028}
   play: {fileID: 1957973167}
-  stage: {fileID: 542975565}
 --- !u!1 &761796520
 GameObject:
   m_ObjectHideFlags: 0

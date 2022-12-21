@@ -11,7 +11,7 @@ public class LightController : MonoBehaviour
     public GameObject play;
     public GameObject after;
     public GameObject cursor;
-    public GameObject stage;
+    // public GameObject stage;
     public AudioClip BGMMusic;
     public AudioSource lightBuldMusic;
     
@@ -55,7 +55,7 @@ public class LightController : MonoBehaviour
             after.SetActive(true);
             monster.SetActive(false);
             play.SetActive(false);
-            stage.SetActive(false);
+            // stage.SetActive(false);
             AudioSource source = GameObject.Find("bgm").GetComponent<AudioSource> ();
             source.clip = BGMMusic;
             source.Play();
