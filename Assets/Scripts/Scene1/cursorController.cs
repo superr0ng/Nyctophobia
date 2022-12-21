@@ -29,9 +29,12 @@ public class cursorController : MonoBehaviour
             }
             else{
                 Ihint[] toHints = FindObjectsOfType<MonoBehaviour>().OfType<Ihint>().ToArray();
-                foreach(Ihint toHint in toHints)
-                    toHint.Hint();
-                music.Play();
+                if(toHints != null){
+                    foreach(Ihint toHint in toHints)
+                        toHint.Hint();
+                    music.Play();
+                }
+                
             }
         }
     }

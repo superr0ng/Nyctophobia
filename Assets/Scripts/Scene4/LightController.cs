@@ -44,6 +44,7 @@ public class LightController : MonoBehaviour
                 break;
             }
         }
+            // Debug.Log("is clicked222");
         int nLit = Compare();
         MonsterOpacity(nLit);
 
